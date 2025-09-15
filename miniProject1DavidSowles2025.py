@@ -63,4 +63,48 @@ def main():
     plt.show()
     plt.savefig("charts/" + NVIDIA_TICKER_SYM + ".png")
 
+    # Obtain plot data for nvidia
+    plotData = np.array([d for d in intelHist["Close"]])
+
+    # Setup plot for nvidia stock
+    plt.title(INTEL_TICKER_SYM + " - Last 10 Days")
+    plt.ylabel("Price")
+    plt.xlabel("Days Ago")
+    plt.plot(days, plotData)
+    plt.show()
+    plt.savefig("charts/" + INTEL_TICKER_SYM + ".png")
+
+    # Obtain plot data for nvidia
+    plotData = np.array([d for d in amdHist["Close"]])
+
+    # Setup plot for nvidia stock
+    plt.title(AMD_TICKER_SYM + " - Last 10 Days")
+    plt.ylabel("Price")
+    plt.xlabel("Days Ago")
+    plt.plot(days, plotData)
+    plt.show()
+    plt.savefig("charts/" + AMD_TICKER_SYM + ".png")
+
+    # Obtain plot data for nvidia
+    plotData = np.array([d for d in msHist["Close"]])
+
+    # Setup plot for nvidia stock
+    plt.title(MS_TICKER_SYM + " - Last 10 Days")
+    plt.ylabel("Price")
+    plt.xlabel("Days Ago")
+    plt.plot(days, plotData)
+    plt.show()
+    plt.savefig("charts/" + MS_TICKER_SYM + ".png")
+
+    # Obtain plot data for nvidia
+    plotData = np.array([d for d in googHist["Close"]])
+
+    # Setup plot for nvidia stock
+    plt.title(GOOGLE_TICKER_SYM + " - Last 10 Days")
+    plt.ylabel("Price")
+    plt.xlabel("Days Ago")
+    plt.plot(days, plotData)
+    plt.show()
+    plt.savefig("charts/" + GOOGLE_TICKER_SYM + ".png")
+
 main()
