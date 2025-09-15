@@ -35,6 +35,8 @@ os.makedirs("charts", exist_ok=True)
 
 def main():
 
+    days = [-10,-9,-8,-7,-6,-5,-4,-3,-2,-1]
+
     # Obtain ticker objects for the five stocks.
     nvidiaTicker = yf.Ticker(NVIDIA_TICKER_SYM)
     intelTicker = yf.Ticker(INTEL_TICKER_SYM)
@@ -50,10 +52,15 @@ def main():
     googHist = googTicker.history(period="10d")
     
 
+    # Obtain plot data for nvidia
     plotData = np.array([d for d in nvidiaHist["Close"]])
     min = plotData.min()
     max = plotData.max()
 
-    plt
+    # Setup plot for nvidia stock
+    plt.title(NVIDIA_TICKER_SYM)
+    plt.ylabel("Price")
+    plt.plot(days, plotData)
+    plt.show()
 
 main()
