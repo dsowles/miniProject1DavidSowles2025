@@ -30,35 +30,30 @@ import yfinance as yf
 import matplotlib.pyplot as plt
 import os
 
+#Make directory for charts
+os.makedirs("charts", exist_ok=True)
 
 def main():
 
+    # Obtain ticker objects for the five stocks.
     nvidiaTicker = yf.Ticker(NVIDIA_TICKER_SYM)
     intelTicker = yf.Ticker(INTEL_TICKER_SYM)
     amdTicker = yf.Ticker(AMD_TICKER_SYM)
     msTicker = yf.Ticker(MS_TICKER_SYM)
     googTicker = yf.Ticker(GOOGLE_TICKER_SYM)\
 
+    # Obtain the stock history
     nvidiaHist = nvidiaTicker.history(period="10d")
     intelHist = intelTicker.history(period="10d")
     amdHist = amdTicker.history(period="10d")
     msHist = msTicker.history(period="10d")
     googHist = googTicker.history(period="10d")
     
-    print(nvidiaHist['Close'])
-    print()
-    
-    print(intelHist['Close'])
-    print()
 
-    print(amdHist['Close'])
-    print()
+    plotData = np.array([d for d in nvidiaHist["Close"]])
+    min = plotData.min()
+    max = plotData.max()
 
-    print(msHist['Close'])
-    print()
-
-    print(googHist['Close'])
-    print()
-
+    plt
 
 main()
