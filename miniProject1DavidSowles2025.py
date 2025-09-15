@@ -54,13 +54,13 @@ def main():
 
     # Obtain plot data for nvidia
     plotData = np.array([d for d in nvidiaHist["Close"]])
-    min = plotData.min()
-    max = plotData.max()
 
     # Setup plot for nvidia stock
-    plt.title(NVIDIA_TICKER_SYM)
+    plt.title(NVIDIA_TICKER_SYM + " - Last 10 Days")
     plt.ylabel("Price")
+    plt.xlabel("Days Ago")
     plt.plot(days, plotData)
     plt.show()
+    plt.savefig("charts/" + NVIDIA_TICKER_SYM + ".png")
 
 main()
